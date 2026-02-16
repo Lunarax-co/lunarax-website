@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from 'next';
 import './globals.css';
 import { GamificationProvider } from '@/contexts/GamificationContext';
@@ -16,6 +17,21 @@ export default function RootLayout({
     <html lang="tr">
       <head>
         <link rel="stylesheet" href="/styles.css" />
+
+        <Script
+  src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+  strategy="afterInteractive"
+/>
+
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+  `}
+</Script>
+
       </head>
       <body className="antialiased text-[#E8E9ED] bg-[#0A1520]">
         <GamificationProvider>

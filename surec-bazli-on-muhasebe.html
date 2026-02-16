@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Süreç Bazlı Ön Muhasebe Yönetimi - Lunarax">
+    <title>Süreç Bazlı Ön Muhasebe Yönetimi - Lunarax</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    Lu<span class="logo-n">n</span>araX
+                </a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menüyü aç">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html#hizmetler">Hizmetler</a>
+                    <a href="ekibimiz.html">Ekibimiz</a>
+                    <a href="index.html#iletisim">İletişim</a>
+                    <a href="videolar.html">Videolar</a>
+                    <a href="index.html" class="btn btn-primary nav-home-btn">Ana Sayfa</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main style="min-height: calc(100vh - 300px); padding: 180px 0 120px;">
+        <!-- PAGE TITLE -->
+        <section style="padding: 0 0 60px; background: var(--color-bg-dark);">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h1>Süreç Bazlı Ön Muhasebe Yönetimi</h1>
+                    <p class="section-subtitle" style="margin-top: 1.5rem;">
+                        Şirket kuruluşundan itibaren doğru ön muhasebe yapısının temelden kurulması.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 1: Company Type Selection -->
+        <section style="padding: 80px 0; background: var(--color-bg-section);">
+            <div class="container">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <h2 style="margin-bottom: 2rem;">Şirket Türünün Seçilmesi: Limited mi, Anonim mi?</h2>
+                    <div style="background: rgba(255, 255, 255, 0.02); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--color-border);">
+                        <p style="margin-bottom: 1.5rem; line-height: 1.8;">
+                            Şirket türü seçimi, işletmenizin geleceğini doğrudan etkileyen stratejik bir karardır. 
+                            Bu seçim yalnızca yasal bir formalite değil, operasyonel esnekliğinizi, vergi yapınızı, 
+                            büyüme potansiyelinizi ve yatırımcı uyumluluğunuzu belirleyen temel bir adımdır.
+                        </p>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                            <div style="padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 10px; border-left: 3px solid var(--color-accent);">
+                                <strong style="display: block; color: var(--color-gold); margin-bottom: 0.5rem;">Vergi Yapısı</strong>
+                                <p style="font-size: 0.95rem; line-height: 1.6; margin: 0;">Şirket türü, vergisel yükümlülüklerinizi ve avantajlarınızı belirler</p>
+                            </div>
+                            <div style="padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 10px; border-left: 3px solid var(--color-accent);">
+                                <strong style="display: block; color: var(--color-gold); margin-bottom: 0.5rem;">Operasyonel Esneklik</strong>
+                                <p style="font-size: 0.95rem; line-height: 1.6; margin: 0;">İş süreçlerinizin hızı ve adaptasyonu şirket yapısıyla ilişkilidir</p>
+                            </div>
+                            <div style="padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 10px; border-left: 3px solid var(--color-accent);">
+                                <strong style="display: block; color: var(--color-gold); margin-bottom: 0.5rem;">Büyüme Potansiyeli</strong>
+                                <p style="font-size: 0.95rem; line-height: 1.6; margin: 0;">Ölçeklenme ve yatırım alma kapasitesi şirket türüyle şekillenir</p>
+                            </div>
+                            <div style="padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 10px; border-left: 3px solid var(--color-accent);">
+                                <strong style="display: block; color: var(--color-gold); margin-bottom: 0.5rem;">Yatırımcı Uyumu</strong>
+                                <p style="font-size: 0.95rem; line-height: 1.6; margin: 0;">Yatırım çekme ve ortaklık yapısı seçilen türle uyumlu olmalıdır</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Limited vs Anonim Comparison -->
+        <section style="padding: 80px 0; background: var(--color-bg-dark);" id="anonim-sirket">
+            <div class="container">
+                <div style="max-width: 1000px; margin: 0 auto;">
+                    <h2 style="margin-bottom: 2rem;">Limited Şirket Nedir? Anonim Şirket Nedir? Temel Farklar Nelerdir?</h2>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.5rem;">
+                        <div style="background: rgba(255, 255, 255, 0.02); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--color-border);">
+                            <div style="display: inline-flex; padding: 0.5rem 1rem; background: rgba(45, 90, 74, 0.2); border-radius: 20px; font-size: 0.85rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: 0.5px; color: #6BC49D; border: 1px solid rgba(45, 90, 74, 0.4);">
+                                Limited Şirket
+                            </div>
+                            <div style="display: grid; gap: 1.5rem;">
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.5rem;">Sermaye Yapısı</strong>
+                                    <p style="font-size: 0.95rem; color: var(--color-text-muted); margin: 0; line-height: 1.6;">
+                                        Minimum 10.000 TL sermaye ile kurulabilir. Ortaklar sermaye payı oranında sorumludur.
+                                    </p>
+                                </div>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.5rem;">Yönetim</strong>
+                                    <p style="font-size: 0.95rem; color: var(--color-text-muted); margin: 0; line-height: 1.6;">
+                                        Müdür veya müdürler kurulu tarafından yönetilir. Karar mekanizması daha hızlı ve esnek.
+                                    </p>
+                                </div>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.5rem;">Sorumluluk</strong>
+                                    <p style="font-size: 0.95rem; color: var(--color-text-muted); margin: 0; line-height: 1.6;">
+                                        Ortaklar koyduğu sermaye ile sınırlı olarak sorumludur. Kişisel mal varlığı korunur.
+                                    </p>
+                                </div>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.5rem;">Uygunluk</strong>
+                                    <p style="font-size: 0.95rem; color: var(--color-text-muted); margin: 0; line-height: 1.6;">
+                                        Küçük ve orta ölçekli işletmeler, aile şirketleri, hızlı büyüme hedefleyen girişimler için idealdir.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(255, 255, 255, 0.02); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--color-border);">
+                            <div style="display: inline-flex; padding: 0.5rem 1rem; background: rgba(139, 90, 90, 0.2); border-radius: 20px; font-size: 0.85rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: 0.5px; color: #D97777; border: 1px solid rgba(139, 90, 90, 0.4);">
+                                Anonim Şirket
+                            </div>
+                            <div style="display: grid; gap: 1.5rem;">
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.5rem;">Sermaye Yapısı</strong>
+                                    <p style="font-size: 0.95rem; color: var(--color-text-muted); margin: 0; line-height: 1.6;">
+                                        Minimum 50.000 TL sermaye gereklidir. Sermaye hisselere bölünür ve borsada işlem görebilir.
+                                    </p>
+                                </div>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.5rem;">Yönetim</strong>
+                                    <p style="font-size: 0.95rem; color: var(--color-text-muted); margin: 0; line-height: 1.6;">
+                                        Yönetim kurulu ve genel kurul yapısı vardır. Karar süreçleri daha formaldır.
+                                    </p>
+                                </div>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.5rem;">Sorumluluk</strong>
+                                    <p style="font-size: 0.95rem; color: var(--color-text-muted); margin: 0; line-height: 1.6;">
+                                        Hissedarlar sahip oldukları hisse oranında sorumludur. Kurumsal sorumluluk yapısı mevcuttur.
+                                    </p>
+                                </div>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.5rem;">Uygunluk</strong>
+                                    <p style="font-size: 0.95rem; color: var(--color-text-muted); margin: 0; line-height: 1.6;">
+                                        Büyük ölçekli projeler, halka açılma hedefi olan şirketler, yüksek sermaye gerektiren yapılar için uygundur.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Limited Company Formation Steps -->
+        <section style="padding: 80px 0; background: var(--color-bg-section);" id="limited-sirket">
+            <div class="container">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <h2 style="margin-bottom: 2rem;">Limited Şirket Kuruluş Aşamaları</h2>
+                    <div style="position: relative;">
+                        <div style="position: absolute; left: 32px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-accent-light) 100%);"></div>
+                        
+                        <div style="display: grid; grid-template-columns: 64px 1fr; gap: 2rem; margin-bottom: 3rem; position: relative;">
+                            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 800; color: var(--color-white); box-shadow: 0 4px 16px rgba(45, 90, 74, 0.4); position: relative; z-index: 1;">1</div>
+                            <div style="padding-top: 0.5rem;">
+                                <h3 style="margin-bottom: 0.75rem; font-size: 1.35rem;">Şirket Türü ve İsim Belirleme</h3>
+                                <p style="color: var(--color-text-muted); line-height: 1.6;">Ticaret sicil müdürlüğüne başvuru yaparak şirket isminin uygunluğu kontrol edilir. İsim tescil edilir ve kullanıma açılır.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 64px 1fr; gap: 2rem; margin-bottom: 3rem; position: relative;">
+                            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 800; color: var(--color-white); box-shadow: 0 4px 16px rgba(45, 90, 74, 0.4); position: relative; z-index: 1;">2</div>
+                            <div style="padding-top: 0.5rem;">
+                                <h3 style="margin-bottom: 0.75rem; font-size: 1.35rem;">Ana Sözleşme Hazırlama</h3>
+                                <p style="color: var(--color-text-muted); line-height: 1.6;">Şirketin faaliyet konusu, sermaye yapısı, ortak hakları ve yönetim şeklini belirleyen ana sözleşme hazırlanır ve noter onayından geçirilir.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 64px 1fr; gap: 2rem; margin-bottom: 3rem; position: relative;">
+                            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 800; color: var(--color-white); box-shadow: 0 4px 16px rgba(45, 90, 74, 0.4); position: relative; z-index: 1;">3</div>
+                            <div style="padding-top: 0.5rem;">
+                                <h3 style="margin-bottom: 0.75rem; font-size: 1.35rem;">Sermaye Yatırma ve Banka İşlemleri</h3>
+                                <p style="color: var(--color-text-muted); line-height: 1.6;">Belirlenen sermaye tutarı şirket adına açılan banka hesabına yatırılır. Sermaye taahhüt belgesi alınır.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 64px 1fr; gap: 2rem; margin-bottom: 3rem; position: relative;">
+                            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 800; color: var(--color-white); box-shadow: 0 4px 16px rgba(45, 90, 74, 0.4); position: relative; z-index: 1;">4</div>
+                            <div style="padding-top: 0.5rem;">
+                                <h3 style="margin-bottom: 0.75rem; font-size: 1.35rem;">Ticaret Sicil Tescili</h3>
+                                <p style="color: var(--color-text-muted); line-height: 1.6;">Hazırlanan belgelerle ticaret sicil müdürlüğüne başvuru yapılır. Şirket resmi olarak tescil edilir ve ticaret sicil gazetesinde ilan edilir.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 64px 1fr; gap: 2rem; margin-bottom: 3rem; position: relative;">
+                            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 800; color: var(--color-white); box-shadow: 0 4px 16px rgba(45, 90, 74, 0.4); position: relative; z-index: 1;">5</div>
+                            <div style="padding-top: 0.5rem;">
+                                <h3 style="margin-bottom: 0.75rem; font-size: 1.35rem;">Vergi Dairesi Kaydı ve İmza Sirküleri</h3>
+                                <p style="color: var(--color-text-muted); line-height: 1.6;">Vergi dairesine başvuru yapılarak vergi kimlik numarası alınır. Yetkili imza sirküleri noter onayından geçirilerek ilgili kurumlara teslim edilir.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 64px 1fr; gap: 2rem; position: relative;">
+                            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 800; color: var(--color-white); box-shadow: 0 4px 16px rgba(45, 90, 74, 0.4); position: relative; z-index: 1;">6</div>
+                            <div style="padding-top: 0.5rem;">
+                                <h3 style="margin-bottom: 0.75rem; font-size: 1.35rem;">Operasyonel Altyapının Kurulması</h3>
+                                <p style="color: var(--color-text-muted); line-height: 1.6;">SGK işveren kaydı, muhasebe sistemi kurulumu, e-imza ve e-fatura altyapısının devreye alınması gibi operasyonel süreçler tamamlanır.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Advantages -->
+        <section style="padding: 80px 0; background: var(--color-bg-dark);">
+            <div class="container">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <h2 style="margin-bottom: 2rem;">Limited Şirketin Avantajları</h2>
+                    <div style="background: rgba(255, 255, 255, 0.02); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--color-border);">
+                        <ul style="list-style: none; display: grid; gap: 1.5rem; padding: 0; margin: 0;">
+                            <li style="display: grid; grid-template-columns: 32px 1fr; gap: 1rem; align-items: start;">
+                                <span style="font-size: 1.25rem; display: flex; align-items: center; justify-content: center;">✓</span>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.4rem; font-size: 1.05rem;">Sınırlı Sorumluluk</strong>
+                                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                                        Ortaklar koyduğu sermaye ile sınırlı olarak sorumludur. Kişisel mal varlıkları şirket borçlarına karşı korunur.
+                                    </p>
+                                </div>
+                            </li>
+                            <li style="display: grid; grid-template-columns: 32px 1fr; gap: 1rem; align-items: start;">
+                                <span style="font-size: 1.25rem; display: flex; align-items: center; justify-content: center;">✓</span>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.4rem; font-size: 1.05rem;">Düşük Sermaye Gereksinimi</strong>
+                                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                                        Minimum 10.000 TL sermaye ile kurulabilir. Girişimciler için erişilebilir bir başlangıç noktası sağlar.
+                                    </p>
+                                </div>
+                            </li>
+                            <li style="display: grid; grid-template-columns: 32px 1fr; gap: 1rem; align-items: start;">
+                                <span style="font-size: 1.25rem; display: flex; align-items: center; justify-content: center;">✓</span>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.4rem; font-size: 1.05rem;">Esnek Yönetim Yapısı</strong>
+                                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                                        Müdür veya müdürler kurulu kararlarıyla hızlı operasyonel kararlar alınabilir. Bürokrasi anonim şirkete göre daha azdır.
+                                    </p>
+                                </div>
+                            </li>
+                            <li style="display: grid; grid-template-columns: 32px 1fr; gap: 1rem; align-items: start;">
+                                <span style="font-size: 1.25rem; display: flex; align-items: center; justify-content: center;">✓</span>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.4rem; font-size: 1.05rem;">Kurumsal Güvenilirlik</strong>
+                                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                                        Şirket yapısı müşteriler, tedarikçiler ve yatırımcılar nezdinde güven ve sürdürülebilirlik algısı oluşturur.
+                                    </p>
+                                </div>
+                            </li>
+                            <li style="display: grid; grid-template-columns: 32px 1fr; gap: 1rem; align-items: start;">
+                                <span style="font-size: 1.25rem; display: flex; align-items: center; justify-content: center;">✓</span>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.4rem; font-size: 1.05rem;">Vergi Avantajları</strong>
+                                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                                        Kurumlar vergisi (%20-23) şahıs şirketlerine göre daha öngörülebilir ve planlı bir vergisel yapı sunar.
+                                    </p>
+                                </div>
+                            </li>
+                            <li style="display: grid; grid-template-columns: 32px 1fr; gap: 1rem; align-items: start;">
+                                <span style="font-size: 1.25rem; display: flex; align-items: center; justify-content: center;">✓</span>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.4rem; font-size: 1.05rem;">Ortaklık Yapısı ve Yatırım Alabilirlik</strong>
+                                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                                        Ortak alma, yeni yatırımcı dahil etme ve hisse devri süreçleri şahıs şirketlerine göre daha kolay ve hukuki olarak güvenlidir.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Address Solution -->
+        <section style="padding: 80px 0; background: var(--color-bg-section);">
+            <div class="container">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <h2 style="margin-bottom: 2rem;">Limited Şirketinizi Adres Sıkıntısı Yaşamadan Kurun</h2>
+                    <div style="background: rgba(255, 255, 255, 0.02); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--color-border);">
+                        <p style="margin-bottom: 2rem; line-height: 1.8;">
+                            Şirket kurarken karşılaşılan en yaygın sorunlardan biri resmi adres gereksinimidir. 
+                            İşyeri kiralamak, tapu işlemleri ve noter tasdikleri hem zaman alıcı hem de maliyetli olabilir. 
+                            Lunarax, operasyonel adres çözümleriyle bu süreci basitleştirir.
+                        </p>
+                        <div style="display: grid; gap: 1.5rem;">
+                            <div style="display: grid; grid-template-columns: 48px 1fr; gap: 1rem; align-items: start; padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 10px;">
+                                <span style="font-size: 2rem;">📍</span>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.5rem;">Resmi Adres Çözümü</strong>
+                                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                                        Ticaret sicil, vergi dairesi ve tüm resmi kurumlara tanımlı, yasal geçerliliği olan adres hizmeti.
+                                    </p>
+                                </div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 48px 1fr; gap: 1rem; align-items: start; padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 10px;">
+                                <span style="font-size: 2rem;">⚡</span>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.5rem;">Hızlı Kurulum</strong>
+                                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                                        İşyeri aramak, kira sözleşmesi yapmak ve tapu işlemleriyle uğraşmadan şirket kuruluşunuzu tamamlayabilirsiniz.
+                                    </p>
+                                </div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 48px 1fr; gap: 1rem; align-items: start; padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 10px;">
+                                <span style="font-size: 2rem;">💰</span>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.5rem;">Maliyet Verimliliği</strong>
+                                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                                        Ofis kirası, depozito, aylık işletme giderleri ve ekstra personel masrafı olmadan operasyonel adres sahibi olursunuz.
+                                    </p>
+                                </div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 48px 1fr; gap: 1rem; align-items: start; padding: 1.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 10px;">
+                                <span style="font-size: 2rem;">✓</span>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 0.5rem;">Uyumluluk ve Güvenlik</strong>
+                                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                                        Tüm yasal düzenlemelere uygun, noter tasdikli ve resmi kurumlarca kabul edilen adres yapısı.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: FAQ -->
+        <section style="padding: 80px 0; background: var(--color-bg-dark);">
+            <div class="container">
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <h2 style="margin-bottom: 2rem;">Sık Sorulan Sorular</h2>
+                    <div style="display: grid; gap: 1rem;">
+                        <details style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--color-border); border-radius: 12px; padding: 1.5rem; cursor: pointer;">
+                            <summary style="font-weight: 600; font-size: 1.05rem; cursor: pointer; list-style: none; outline: none;">Limited şirket kurmak ne kadar sürer?</summary>
+                            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border);">
+                                <p style="color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                                    Normal şartlarda tüm belgeler hazır olduğunda 3-5 iş günü içinde limited şirket kurulumu tamamlanabilir. 
+                                    Operasyonel adres hizmeti ile bu süre daha da kısalır.
+                                </p>
+                            </div>
+                        </details>
+
+                        <details style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--color-border); border-radius: 12px; padding: 1.5rem; cursor: pointer;">
+                            <summary style="font-weight: 600; font-size: 1.05rem; cursor: pointer; list-style: none; outline: none;">Tek kişi limited şirket kurulabilir mi?</summary>
+                            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border);">
+                                <p style="color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                                    Evet, tek kişilik limited şirket kurulabilir. Tek ortak olarak tüm sermayeyi siz koyabilir ve şirket yönetimini tek başınıza yürütebilirsiniz.
+                                </p>
+                            </div>
+                        </details>
+
+                        <details style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--color-border); border-radius: 12px; padding: 1.5rem; cursor: pointer;">
+                            <summary style="font-weight: 600; font-size: 1.05rem; cursor: pointer; list-style: none; outline: none;">Minimum sermaye ne kadar yatırılmalı?</summary>
+                            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border);">
+                                <p style="color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                                    Limited şirket kurmak için minimum 10.000 TL sermaye gereklidir. Bu tutar şirket adına açılan banka hesabına yatırılır.
+                                </p>
+                            </div>
+                        </details>
+
+                        <details style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--color-border); border-radius: 12px; padding: 1.5rem; cursor: pointer;">
+                            <summary style="font-weight: 600; font-size: 1.05rem; cursor: pointer; list-style: none; outline: none;">Şirket kurulurken hangi belgeler gereklidir?</summary>
+                            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border);">
+                                <p style="color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                                    Nüfus cüzdanı fotokopisi, ikametgah belgesi, vergi levhası (varsa), imza sirküleri ve ana sözleşme temel belgelerdir. 
+                                    Lunarax bu süreçte tüm belge hazırlığını yönetir.
+                                </p>
+                            </div>
+                        </details>
+
+                        <details style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--color-border); border-radius: 12px; padding: 1.5rem; cursor: pointer;">
+                            <summary style="font-weight: 600; font-size: 1.05rem; cursor: pointer; list-style: none; outline: none;">Operasyonel adres hizmeti yasal mıdır?</summary>
+                            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border);">
+                                <p style="color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                                    Evet, yasal ve resmi kurumlarca kabul edilen bir hizmettir. Ticaret sicil, vergi dairesi ve tüm resmi yazışmalar için geçerlidir.
+                                </p>
+                            </div>
+                        </details>
+
+                        <details style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--color-border); border-radius: 12px; padding: 1.5rem; cursor: pointer;">
+                            <summary style="font-weight: 600; font-size: 1.05rem; cursor: pointer; list-style: none; outline: none;">Kuruluş sonrası hangi yükümlülükler vardır?</summary>
+                            <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border);">
+                                <p style="color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                                    Muhasebe kayıtları, vergi beyanları, SGK bildirimleri ve yıllık mali tabloların hazırlanması temel yükümlülüklerdir. 
+                                    Lunarax bu süreçlerin tamamını süreç bazlı olarak yönetir.
+                                </p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">Lu<span>n</span>araX</div>
+                    <p>Süreç bazlı ön muhasebe hizmeti</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Hizmetler</h4>
+                        <a href="index.html#hizmetler">Ön Muhasebe Yönetimi</a>
+                        <a href="index.html#hizmetler">Şirket Kuruluşu</a>
+                        <a href="index.html#hizmetler">Devlet Destekleri</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Kurumsal</h4>
+                        <a href="index.html#nedir">Hakkımızda</a>
+                        <a href="index.html#nasil-calisir">Nasıl Çalışır</a>
+                        <a href="index.html#kimler-icin">Kimler İçin</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>İletişim</h4>
+                        <p>info@hilunarax.co</p>
+                        <p>+90 (XXX) XXX XX XX</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lunarax. Tüm hakları saklıdır. Bu hizmet Lunara Mali Müşavirlik çözüm ortağı Lunarax tarafından sunulmaktadır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileToggle.classList.toggle('active');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            });
+        });
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

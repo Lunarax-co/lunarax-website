@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Videolar - Lunarax">
+    <title>Videolar - Lunarax</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    Lu<span class="logo-n">n</span>araX
+                </a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menüyü aç">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html#hizmetler">Hizmetler</a>
+                    <a href="ekibimiz.html">Ekibimiz</a>
+                    <a href="index.html#iletisim">İletişim</a>
+                    <a href="videolar.html">Videolar</a>
+                    <a href="index.html" class="btn btn-primary nav-home-btn">Ana Sayfa</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-main">
+        <div class="container">
+            <section style="padding: 80px 20px;">
+                <div style="text-align: center; margin-bottom: 60px;">
+                    <h1 style="margin-bottom: 15px; font-size: 2.5em;">Video Kütüphanemiz</h1>
+                    <p style="color: #666; font-size: 16px; max-width: 600px; margin: 0 auto;">Lunarax hizmetleri, ön muhasebe süreci ve kurumsal bilgiler hakkında detaylı video içerikleri.</p>
+                </div>
+
+                <!-- Videos Grid -->
+                <div class="videos-grid">
+                    <!-- Video Card 1 -->
+                    <div class="video-card">
+                        <div class="video-container">
+                            <video width="100%" height="100%" controls>
+                                <source src="LUNARA TANITIM VİDEOSU.mp4" type="video/mp4">
+                                Tarayıcınız HTML5 video etiketini desteklemiyor.
+                            </video>
+                            <div class="video-overlay">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="30" cy="30" r="29" stroke="white" stroke-width="2"/>
+                                    <path d="M24 18V42L42 30Z" fill="white"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Lunara Tanıtım Videosu</h3>
+                            <p>Lunarax'ın sunduğu hizmetler ve avantajları hakkında kapsamlı bir tanıtım.</p>
+                            <span class="video-duration">5:30</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coming Soon Banner -->
+                <div style="text-align: center; margin-top: 80px; padding: 40px; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); border-radius: 12px; color: white;">
+                    <h3 style="color: white; margin-bottom: 10px;">Daha Fazla İçerik Yakında</h3>
+                    <p style="color: rgba(255,255,255,0.9);">Operasyonel rehberler, case study'ler ve eğitim videoları yakında eklenecektir.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">Lu<span>n</span>araX</div>
+                    <p>Süreç bazlı ön muhasebe hizmeti</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Hizmetler</h4>
+                        <a href="index.html#hizmetler">Ön Muhasebe Yönetimi</a>
+                        <a href="index.html#hizmetler">Şirket Kuruluşu</a>
+                        <a href="index.html#hizmetler">Devlet Destekleri</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Kurumsal</h4>
+                        <a href="index.html#nedir">Hakkımızda</a>
+                        <a href="index.html#nasil-calisir">Nasıl Çalışır</a>
+                        <a href="index.html#kimler-icin">Kimler İçin</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>İletişim</h4>
+                        <p>info@hilunarax.co</p>
+                        <p>+90 (XXX) XXX XX XX</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lunarax. Tüm hakları saklıdır. Bu hizmet Lunara Mali Müşavirlik çözüm ortağı Lunarax tarafından sunulmaktadır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script defer>
+        function initNavbar() {
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navLinks = document.getElementById('navLinks');
+            const navbar = document.getElementById('navbar');
+
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    mobileToggle.classList.toggle('active');
+                });
+            }
+
+            if (navLinks) {
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        if (mobileToggle) mobileToggle.classList.remove('active');
+                    });
+                });
+            }
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', initNavbar);
+    </script>
+</body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Firmanızı Tanıyalım - Lunarax">
+    <title>Firmanızı Tanıyalım - Lunarax</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    Lu<span class="logo-n">n</span>araX
+                </a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Menüyü aç">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html#hizmetler">Hizmetler</a>
+                    <a href="ekibimiz.html">Ekibimiz</a>
+                    <a href="iletisim.html">İletişim</a>
+                    <a href="videolar.html">Videolar</a>
+                    <a href="index.html" class="btn btn-primary nav-home-btn">Ana Sayfa</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-main wizard-main">   
+        <div class="container">
+            <div class="wizard-container">
+                <!-- Progress Bar -->
+                <div class="wizard-progress" id="wizardProgress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">Bölüm 1 / 5</div>
+                </div>
+
+                <!-- Form Panel -->
+                <div class="wizard-panel" id="wizardPanel">
+                    <!-- Intro (shown on step 1) -->
+                    <div class="wizard-intro" id="wizardIntro">
+                        <p>Bu kısa analiz, firmanızın ön muhasebe yapısını anlamak ve size özel bir çözüm oluşturmak için hazırlanmıştır. Standart fiyat vermiyoruz; önce sizi tanıyor, sonra en doğru yapıyı öneriyoruz.</p>
+                    </div>
+
+                    <!-- Step Header -->
+                    <div class="step-header" id="stepHeader">
+                        <h2 id="stepTitle">BÖLÜM 1 – Firmanızı Tanıyalım</h2>
+                        <p class="step-mood" id="stepMood">Isınma – kolay ve hızlı</p>
+                    </div>
+
+                    <!-- Step Content -->
+                    <form class="wizard-form" id="wizardForm">
+                        <div class="step-content" id="stepContent">
+                            <!-- Steps will be rendered dynamically -->
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <div class="wizard-nav">
+                            <button type="button" class="btn btn-secondary" id="btnBack" data-action="back" style="display: none;">Geri</button>
+                            <button type="button" class="btn btn-primary" id="submitBtn" data-action="next" disabled>Devam</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Success Panel (hidden initially) -->
+                <div class="success-panel" id="successPanel" style="display: none;">
+                    <div class="success-icon">✓</div>
+                    <h2>Formunuz başarıyla alındı.</h2>
+                    <div class="success-body">
+                        <p>Bilgileriniz, Lunarax uzman ekibi tarafından incelenecek ve firmanız için en uygun ön muhasebe yapısı oluşturulacaktır.</p>
+                        <p>Kısa süre içinde ön muhasebe danışmanınız atanacak ve sizinle iletişime geçilecektir.</p>
+                        <p>Şimdiden teşekkür ederiz.</p>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btnNewForm">Yeni form doldur</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Hidden iframe for form submission -->
+    <iframe name="lunaraXHiddenFrame" id="lunaraXHiddenFrame" style="display:none;"></iframe>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">Lu<span>n</span>araX</div>
+                    <p>Süreç bazlı ön muhasebe hizmeti</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Hizmetler</h4>
+                        <a href="index.html#hizmetler">Ön Muhasebe Yönetimi</a>
+                        <a href="index.html#hizmetler">Şirket Kuruluşu</a>
+                        <a href="index.html#hizmetler">Devlet Destekleri</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Kurumsal</h4>
+                        <a href="index.html#nedir">Hakkımızda</a>
+                        <a href="index.html#nasil-calisir">Nasıl Çalışır</a>
+                        <a href="index.html#kimler-icin">Kimler İçin</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>İletişim</h4>
+                        <p>info@hilunarax.co</p>
+                        <p>+90 (XXX) XXX XX XX</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lunarax. Tüm hakları saklıdır. Bu hizmet Lunara Mali Müşavirlik çözüm ortağı Lunarax tarafından sunulmaktadır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Hidden iframe for form submission -->
+    <iframe name="hiddenSubmitFrame" style="display:none;"></iframe>
+
+    <script defer>
+        // Apps Script endpoint (must end with /exec)
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwdtyF9ZLFzmOBciqm_oWTCwCVAFNUkIcyM25IZ72swfEpdFvgOaeaSJkaik0fabd0i/exec";
+
+        // ========== NAV & SCROLL ==========
+        function initNavbar() {
+            const mobileToggle = document.getElementById('mobileToggle');
+            const navLinks = document.getElementById('navLinks');
+            const navbar = document.getElementById('navbar');
+
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    mobileToggle.classList.toggle('active');
+                });
+            }
+
+            if (navLinks) {
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        if (mobileToggle) mobileToggle.classList.remove('active');
+                    });
+                });
+            }
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // ========== GLOBAL ERROR HANDLER ==========
+        window.addEventListener('error', (e) => {
+            console.error('JS ERROR:', e.message);
+            if (typeof showInlineError === 'function') {
+                showInlineError('Sayfa script hatası: ' + e.message);
+            }
+        });
+
+        // ========== WIZARD FORM LOGIC ==========
+        const STORAGE_KEY = 'lunarax_form_draft';
+        
+        const steps = [
+            {
+                title: 'BÖLÜM 1 – Firmanızı Tanıyalım',
+                mood: 'Isınma – kolay ve hızlı',
+                fields: [
+                    { name: 'companyName', label: 'Firmanızın adı nedir?', type: 'text', required: true },
+                    { name: 'contactName', label: 'Sizinle iletişime geçeceğimiz yetkili kişi', type: 'text', required: true, placeholder: 'Ad - Soyad' },
+                    { name: 'phone', label: 'Telefon numaranız', type: 'tel', required: true, helper: 'Danışmanınız bu numaradan sizi arayacak' },
+                    { name: 'email', label: 'E-posta adresiniz', type: 'text', required: true, placeholder: 'ornek@alan.com' },
+                    { name: 'companyType', label: 'Firma türünüz hangisi?', type: 'radio', required: true, options: ['Şahıs', 'Limited', 'Anonim'], helper: 'Her firma türü için süreç farklı ilerler.' }
+                ]
+            },
+            {
+                title: 'BÖLÜM 2 – Mevcut Yapıyı Anlayalım',
+                mood: 'Merak başlar',
+                fields: [
+                    { name: 'sector', label: 'Hangi sektörde faaliyet gösteriyorsunuz?', type: 'radio', required: true, options: ['Hizmet / Danışmanlık', 'Eğitim Kurumu', 'Turizm / Seyahat Acentesi', 'Üretim', 'E-Ticaret', 'Ticaret', 'Diğer'] },
+                    { name: 'bookType', label: 'Defter türünüz hangisi?', type: 'radio', required: true, options: ['İşletme Defteri', 'Bilanço', 'Emin değilim'] },
+                    { name: 'invoiceCount', label: 'Aylık ortalama fatura sayınız yaklaşık kaç?', type: 'radio', required: true, options: ['0–20', '20–50', '50–100', '100+'], helper: 'Bu bilgi, ihtiyaç duyacağınız hizmet seviyesini belirlememize yardımcı olur.' }
+                ]
+            },
+            {
+                title: 'BÖLÜM 3 – Şu An Nerede Zorlanıyorsunuz?',
+                mood: 'Sorunun çözüleceğini hissettiren bölüm',
+                fields: [
+                    { name: 'challenges', label: 'Şu anda ön muhasebede sizi en çok zorlayan konular hangileri?', type: 'checkbox', required: true, minSelections: 1, options: ['Fatura kesme ve takip', 'KDV süreçleri', 'Cari mutabakat', 'Tahsilat / ödeme takibi', 'Personel / bordro süreçleri', 'Evrak ve belge düzeni', 'Kontrol edememe / geç fark etme', 'Henüz sistem oturmadı'] }
+                ]
+            },
+            {
+                title: 'BÖLÜM 4 – Lunarax\'tan Ne Bekliyorsunuz?',
+                mood: 'Çözüm odaklı, motive edici',
+                fields: [
+                    { name: 'expectations', label: 'Lunarax sizin için hangilerini üstlensin?', type: 'checkbox', required: true, minSelections: 1, options: ['Ön muhasebe süreçlerinin tamamı', 'KDV ve vergi ön hazırlıkları', 'Raporlama ve kontrol', 'Personel süreçleri', 'Sadece belirli alanlar (detayları görüşelim)'] },
+                    { name: 'documentMethod', label: 'Belgeleri bize hangi yolla iletmek sizin için daha kolay olur?', type: 'radio', required: true, options: ['WhatsApp', 'Mail', 'Drive / Paylaşım klasörü'] }
+                ]
+            },
+            {
+                title: 'BÖLÜM 5 – Son Dokunuş',
+                mood: 'Kısa ve Serbest',
+                fields: [
+                    { name: 'additionalNotes', label: 'Eklemek istediğiniz özel bir durum var mı?', type: 'textarea', required: false, placeholder: 'Varsa birkaç cümle yeterli' }
+                ]
+            }
+        ];
+
+        let currentStep = 0;
+        let formData = {};
+
+        // Load draft from localStorage
+        function loadDraft() {
+            const draft = localStorage.getItem(STORAGE_KEY);
+            if (draft) {
+                try {
+                    formData = JSON.parse(draft);
+                } catch (e) {
+                    formData = {};
+                }
+            }
+        }
+
+        // Save draft to localStorage
+        function saveDraft() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+        }
+
+        // Clear draft
+        function clearDraft() {
+            localStorage.removeItem(STORAGE_KEY);
+            formData = {};
+        }
+
+        // Validate phone number (basic TR format)
+        function validatePhone(phone) {
+            const cleaned = phone.replace(/\s/g, '');
+            return /^(\+90|0)?[5][0-9]{9}$/.test(cleaned) || /^[0-9]{10,11}$/.test(cleaned);
+        }
+
+        // Render current step
+        function renderStep() {
+            const step = steps[currentStep];
+            const stepContent = document.getElementById('stepContent');
+            const stepTitle = document.getElementById('stepTitle');
+            const stepMood = document.getElementById('stepMood');
+            const wizardIntro = document.getElementById('wizardIntro');
+            const submitBtn = document.getElementById('submitBtn');
+            const btnBack = document.getElementById('btnBack');
+
+            // Update header
+            stepTitle.textContent = step.title;
+            stepMood.textContent = step.mood;
+
+            // Show/hide intro
+            wizardIntro.style.display = currentStep === 0 ? 'block' : 'none';
+
+            // Update progress
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
+            const progress = ((currentStep + 1) / steps.length) * 100;
+            progressFill.style.width = progress + '%';
+            progressText.textContent = `Bölüm ${currentStep + 1} / ${steps.length}`;
+
+            // Show/hide back button
+            btnBack.style.display = currentStep > 0 ? 'inline-flex' : 'none';
+
+            // Update next button text and action
+            submitBtn.textContent = currentStep === steps.length - 1 ? 'Gönder' : 'Devam';
+            submitBtn.setAttribute('type', 'button');
+            submitBtn.setAttribute('data-action', currentStep === steps.length - 1 ? 'submit' : 'next');
+
+            // Render fields
+            stepContent.innerHTML = '';
+            step.fields.forEach(field => {
+                const fieldGroup = document.createElement('div');
+                fieldGroup.className = 'form-field-group';
+
+                const label = document.createElement('label');
+                label.className = 'form-label';
+                label.textContent = field.label + (field.required ? ' *' : '');
+                fieldGroup.appendChild(label);
+
+                if (field.type === 'text' || field.type === 'tel') {
+                    const input = document.createElement('input');
+                    input.type = field.type;
+                    input.name = field.name;
+                    input.className = 'form-input';
+                    input.value = formData[field.name] || '';
+                    if (field.placeholder) input.placeholder = field.placeholder;
+                    if (field.required) input.required = true;
+                    fieldGroup.appendChild(input);
+
+                    const error = document.createElement('div');
+                    error.className = 'field-error';
+                    error.id = `error-${field.name}`;
+                    fieldGroup.appendChild(error);
+
+                    input.addEventListener('input', () => {
+                        formData[field.name] = input.value;
+                        saveDraft();
+                        validateStep();
+                    });
+
+                } else if (field.type === 'textarea') {
+                    const textarea = document.createElement('textarea');
+                    textarea.name = field.name;
+                    textarea.className = 'form-input';
+                    textarea.rows = 4;
+                    textarea.value = formData[field.name] || '';
+                    if (field.placeholder) textarea.placeholder = field.placeholder;
+                    fieldGroup.appendChild(textarea);
+
+                    textarea.addEventListener('input', () => {
+                        formData[field.name] = textarea.value;
+                        saveDraft();
+                        validateStep();
+                    });
+
+                } else if (field.type === 'radio') {
+                    const optionsContainer = document.createElement('div');
+                    optionsContainer.className = 'radio-options';
+                    
+                    field.options.forEach(option => {
+                        const optionLabel = document.createElement('label');
+                        optionLabel.className = 'radio-option';
+                        
+                        const input = document.createElement('input');
+                        input.type = 'radio';
+                        input.name = field.name;
+                        input.value = option;
+                        input.checked = formData[field.name] === option;
+                        
+                        const span = document.createElement('span');
+                        span.textContent = option;
+                        
+                        optionLabel.appendChild(input);
+                        optionLabel.appendChild(span);
+                        optionsContainer.appendChild(optionLabel);
+
+                        input.addEventListener('change', () => {
+                            formData[field.name] = option;
+                            saveDraft();
+                            validateStep();
+                        });
+                    });
+                    
+                    fieldGroup.appendChild(optionsContainer);
+
+                    const error = document.createElement('div');
+                    error.className = 'field-error';
+                    error.id = `error-${field.name}`;
+                    fieldGroup.appendChild(error);
+
+                } else if (field.type === 'checkbox') {
+                    const optionsContainer = document.createElement('div');
+                    optionsContainer.className = 'checkbox-options';
+                    
+                    if (!formData[field.name]) formData[field.name] = [];
+                    
+                    field.options.forEach(option => {
+                        const optionLabel = document.createElement('label');
+                        optionLabel.className = 'checkbox-option';
+                        
+                        const input = document.createElement('input');
+                        input.type = 'checkbox';
+                        input.name = field.name;
+                        input.value = option;
+                        input.checked = formData[field.name].includes(option);
+                        
+                        const span = document.createElement('span');
+                        span.textContent = option;
+                        
+                        optionLabel.appendChild(input);
+                        optionLabel.appendChild(span);
+                        optionsContainer.appendChild(optionLabel);
+
+                        input.addEventListener('change', () => {
+                            if (input.checked) {
+                                if (!formData[field.name].includes(option)) {
+                                    formData[field.name].push(option);
+                                }
+                            } else {
+                                formData[field.name] = formData[field.name].filter(v => v !== option);
+                            }
+                            saveDraft();
+                            validateStep();
+                        });
+                    });
+                    
+                    fieldGroup.appendChild(optionsContainer);
+
+                    const error = document.createElement('div');
+                    error.className = 'field-error';
+                    error.id = `error-${field.name}`;
+                    fieldGroup.appendChild(error);
+                }
+
+                if (field.helper) {
+                    const helper = document.createElement('div');
+                    helper.className = 'field-helper';
+                    helper.textContent = field.helper;
+                    fieldGroup.appendChild(helper);
+                }
+
+                stepContent.appendChild(fieldGroup);
+            });
+
+            validateStep();
+        }
+
+        // Validate current step
+        function validateStep() {
+            const step = steps[currentStep];
+            const submitBtn = document.getElementById('submitBtn');
+            let isValid = true;
+
+            step.fields.forEach(field => {
+                const errorEl = document.getElementById(`error-${field.name}`);
+                if (errorEl) errorEl.textContent = '';
+
+                if (field.required) {
+                    if (field.type === 'checkbox') {
+                        if (!formData[field.name] || formData[field.name].length < (field.minSelections || 1)) {
+                            isValid = false;
+                            if (errorEl && formData[field.name] && formData[field.name].length === 0) {
+                                errorEl.textContent = 'En az bir seçenek seçmelisiniz';
+                            }
+                        }
+                    } else if (field.type === 'tel') {
+                        if (!formData[field.name] || !validatePhone(formData[field.name])) {
+                            isValid = false;
+                            if (errorEl && formData[field.name] && !validatePhone(formData[field.name])) {
+                                errorEl.textContent = 'Geçerli bir telefon numarası giriniz';
+                            }
+                        }
+                    } else {
+                        if (!formData[field.name] || formData[field.name].trim() === '') {
+                            isValid = false;
+                        }
+                    }
+                }
+            });
+
+            submitBtn.disabled = !isValid;
+        }
+
+        // Navigate to next step
+        function goNext() {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                console.log("STEP:", currentStep);
+                renderStep();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                submitForm();
+            }
+        }
+
+        // Navigate to previous step
+        function goBack() {
+            if (currentStep > 0) {
+                currentStep--;
+                console.log("STEP:", currentStep);
+                renderStep();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function showSuccessPanel() {
+            document.getElementById('wizardPanel').style.display = 'none';
+            document.getElementById('wizardProgress').style.display = 'none';
+            document.getElementById('successPanel').style.display = 'block';
+        }
+
+        function showInlineError(message) {
+            const existingError = document.querySelector('.submit-error');
+            if (existingError) existingError.remove();
+            
+            if (!message) return; // Boşsa sadece sil
+            
+            const stepContent = document.getElementById('stepContent');
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'submit-error';
+            errorDiv.style.cssText = 'background-color: #fee; color: #c33; padding: 12px; border: 1px solid #fcc; border-radius: 4px; margin-bottom: 16px; font-size: 14px;';
+            errorDiv.textContent = message;
+            stepContent.insertBefore(errorDiv, stepContent.firstChild);
+        }
+
+        function enableButtonBack(originalText) {
+            const submitBtn = document.getElementById('submitBtn');
+            if (!submitBtn) return;
+            submitBtn.disabled = false;
+            if (originalText) submitBtn.textContent = originalText;
+            submitBtn.style.opacity = '1';
+            submitBtn.style.pointerEvents = 'auto';
+        }
+
+        // Build payload from formData
+        function buildPayload() {
+            return {
+                companyName: formData.companyName || '',
+                contactName: formData.contactName || '',
+                phone: formData.phone || '',
+                email: formData.email || '',
+                companyType: formData.companyType || '',
+                sector: formData.sector || '',
+                invoiceCount: formData.invoiceCount || '',
+                ledgerType: formData.ledgerType || formData.bookType || '',
+                documentMethod: formData.documentMethod || '',
+                challenges: formData.challenges || [],
+                expectations: formData.expectations || [],
+                additionalNotes: formData.additionalNotes || ''
+            };
+        }
+
+        // Submit form via hidden iframe POST
+        function submitForm() {
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.textContent;
+            
+            try {
+                showInlineError("");
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Gönderiliyor...';
+                submitBtn.style.opacity = '0.7';
+                submitBtn.style.pointerEvents = 'none';
+
+                const payload = buildPayload();
+
+                console.log("SUBMIT started");
+                console.log("SCRIPT_URL:", SCRIPT_URL);
+                console.log("payload:", payload);
+                console.log("payload.email:", payload.email);
+
+                // Dinamik form oluştur
+                let form = document.getElementById('lunaraXSubmitForm');
+                if (!form) {
+                    form = document.createElement('form');
+                    form.id = 'lunaraXSubmitForm';
+                    form.method = 'POST';
+                    form.action = SCRIPT_URL;
+                    form.target = 'lunaraXHiddenFrame';
+                    form.enctype = 'application/x-www-form-urlencoded';
+                    form.style.display = 'none';
+                    document.body.appendChild(form);
+                }
+                
+                // Formu temizle
+                form.innerHTML = '';
+                
+                // Payload'ı hidden input'lara dönüştür
+                Object.entries(payload).forEach(([key, val]) => {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = key;
+                    // Dizi alanlarını JSON string'e çevir
+                    input.value = Array.isArray(val) ? JSON.stringify(val) : (val || '');
+                    form.appendChild(input);
+                });
+
+                // Form'u submit et
+                form.submit();
+
+                // Optimistic: 2 saniye içinde success göster
+                setTimeout(() => {
+                    showSuccessPanel();
+                    clearDraft();
+                }, 2000);
+
+                // Fallback: 6 saniye sonra hâlâ gönderiliyor durumundaysa hata göster
+                setTimeout(() => {
+                    if (submitBtn.textContent === 'Gönderiliyor...') {
+                        showInlineError("Gönderim zaman aşımına uğradı. Lütfen tekrar deneyin.");
+                        enableButtonBack(originalText);
+                    }
+                }, 6000);
+
+            } catch (err) {
+                console.error("submit error:", err);
+                showInlineError("Gönderim hatası: " + (err && err.message ? err.message : String(err)));
+                enableButtonBack(originalText);
+            }
+        }
+
+        // Reset form
+        function resetForm() {
+            currentStep = 0;
+            formData = {};
+            clearDraft();
+            document.getElementById('wizardPanel').style.display = 'block';
+            document.getElementById('wizardProgress').style.display = 'block';
+            document.getElementById('successPanel').style.display = 'none';
+            renderStep();
+        }
+
+        // ========== BUTTON EVENT WIRING ==========
+        function wireButtons() {
+            console.log("wireButtons() called");
+            
+            // Back button
+            const btnBack = document.getElementById('btnBack');
+            if (btnBack) {
+                btnBack.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    console.log("BACK clicked");
+                    goBack();
+                });
+            }
+
+            // Next/Continue button
+            const submitBtn = document.getElementById('submitBtn');
+            if (submitBtn) {
+                submitBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (submitBtn.textContent.includes('Gönder')) {
+                        console.log("SUBMIT clicked");
+                        submitForm();
+                    } else {
+                        console.log("NEXT clicked");
+                        goNext();
+                    }
+                });
+            }
+
+            // New form button
+            const btnNewForm = document.getElementById('btnNewForm');
+            if (btnNewForm) {
+                btnNewForm.addEventListener('click', resetForm);
+            }
+
+            // Form submit prevention
+            const wizardForm = document.getElementById('wizardForm');
+            if (wizardForm) {
+                wizardForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                });
+            }
+        }
+
+        // ========== WIZARD INIT ==========
+        function initWizard() {
+            console.log("initWizard starting");
+            loadDraft();
+            renderStep();
+            console.log("Wizard initialized");
+        }
+
+        // ========== ENTRY POINT ==========
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("DOM READY");
+            initNavbar();
+            initWizard();
+            wireButtons();
+        });
+    </script>
+</body>
+</html>

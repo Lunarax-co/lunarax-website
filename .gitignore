@@ -1,0 +1,61 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Next.js
+.next/
+out/
+build/
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+
+# Backup and temporary files
+*.backup
+*.backup.*
+*.bak
+*.old
+*-old.*
+*-new.*
+*.tmp
+*.temp
+
+# Documentation (keep only in development, exclude from production)
+*.md
+!README.md
+!LICENSE.md
+
+# Legacy files
+_legacy/
+
+# TypeScript build info
+*.tsbuildinfo
+.env
+.env.*
+node_modules
+.next
